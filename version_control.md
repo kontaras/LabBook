@@ -41,3 +41,8 @@
 
 ### Checking in to repo
 `p4 submit -c <CLN>`
+
+### Checking local state
+
+#### See what is opened
+`p4 opened`
