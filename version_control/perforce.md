@@ -5,13 +5,19 @@
 
 ### Checking in code
 
-### Creating changelist
+#### Creating changelist
 `p4 change`
 
-### Checking in to repo
+#### Checking in to repo
 `p4 submit -c <CLN>`
 
 ### Checking local state
 
-#### See what is opened
+##### See what is opened
 `p4 opened`
+
+### Crosporting change
+```bash
+p4 crossport  //depot/<path>...@CLN,CLN  //depot/<path>...
+p5 resolve
+```
