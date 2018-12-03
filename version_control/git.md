@@ -28,21 +28,3 @@
 #### What has not been pushed
 `git log origin/master..HEAD`: See what has been committed but not pushed  
 `git diff origin/master..HEAD`: Diff between what has been committed and what has been pushed
-
-## Perfoce
-
-### Pulling code
-`p4 sync`
-
-### Checking in code
-
-### Creating changelist
-`p4 change`
-
-### Checking in to repo
-`p4 submit -c <CLN>`
-
-### Checking local state
-
-#### See what is opened
-`p4 opened`
