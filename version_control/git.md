@@ -10,6 +10,9 @@
 #### Blowing away changes that are committed
 `git reset --hard origin/master`
 
+### Undo local change
+`git checkout <file path>`
+
 ### Pushing code
 
 #### Adding files to change
