@@ -29,7 +29,7 @@
 `git status`
 
 #### Diffing against repo
-`git diff HEAD`: Diff against local repo
+`git diff HEAD`: Diff against local repo  
 `git diff origin/master`: Diff against master repo
 
 #### What has not been pushed
