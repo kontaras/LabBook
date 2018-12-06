@@ -28,6 +28,10 @@
 #### Find the files that are open and not commited
 `git status`
 
+#### Diffing against repo
+`git diff HEAD`: Diff against local repo
+`git diff origin/master`: Diff against master repo
+
 #### What has not been pushed
 `git log origin/master..HEAD`: See what has been committed but not pushed  
 `git diff origin/master..HEAD`: Diff between what has been committed and what has been pushed
