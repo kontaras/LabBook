@@ -9,7 +9,7 @@
 `brew search <PKG>`
 
 ### Package info
-`brew info <PKG>`
+`brew info <PKG>`  
 `brew cask info <PKG>`
 
 ### Install Package
@@ -21,9 +21,9 @@
 `brew update`
 
 ### list out of date:
-`brew outdated`
+`brew outdated`  
 `brew cask outdated`
 
 ### update all out of date packages
-`brew upgrade`
+`brew upgrade`  
 `brew cask upgrade`
