@@ -1,3 +1,4 @@
+# pip
 ## Update
-`pip list --outdated`
+`pip list --outdated`  
 `pip install <PKG> --upgrade`
