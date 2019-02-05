@@ -13,7 +13,7 @@ def index():
 def getFile(doc):
     siteDir = path.abspath("site")
     fl = path.normpath(path.join(siteDir, doc + ".md"))
-    if not fl.startswith(siteDir):
+    if not fl.startswith(siteDir) or not path.exists(fl):
         raise HTTPError(status=404)
     with io.BytesIO() as output, open(fl, "rb") as code:
         markdown.markdownFromFile(input=code, output=output)
