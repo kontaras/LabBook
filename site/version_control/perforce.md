@@ -18,6 +18,6 @@
 
 ### Crosporting change
 ```bash
-p4 crossport  //depot/<path>...@CLN,CLN  //depot/<path>...
-p5 resolve
+p4 integrate  //depot/<path>...@CLN,CLN  //depot/<path>...
+p4 resolve
 ```
