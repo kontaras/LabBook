@@ -24,6 +24,9 @@ TBD
 ### Unshelving
 `p4 unshelve -s <Shelf Number> [-c <CLN>]`
 
+## Reverting default change list
+`p4 revert -c default //...`
+
 ## Crosporting change
 ```bash
 p4 integrate  //depot/<path>...@CLN,CLN  //depot/<path>...
