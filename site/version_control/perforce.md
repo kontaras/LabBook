@@ -5,6 +5,11 @@
 
 ## Checking in code
 
+## Moving all open files into a change
+Either make a new change  
+or  
+`p4 reopen -c <CLN> ...`
+
 ### Creating changelist
 `p4 change`
 
@@ -24,8 +29,13 @@ TBD
 ### Unshelving
 `p4 unshelve -s <Shelf Number> [-c <CLN>]`
 
-## Reverting default change list
+## Undo the damage
+
+### Reverting default change list
 `p4 revert -c default //...`
+
+### Backout a change
+`p4 undo "@<CLN>"`
 
 ## Crosporting change
 ```bash
