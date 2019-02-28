@@ -6,7 +6,7 @@
 `git pull`: Same as doing `git fetch ; git merge`  
 `git pull --rebase`: Same as doing `git fetch ; git rebase`  
 `git fetch`: Pull code from a remote repo into the local one  
-`git merge`: Apply remote changes (already in your repo) into your checked out state
+`git merge`: Apply remote changes (already in your repo) into your checked out state  
 `git rebase`: Apply the changes in your checked out state to the state pulled from the remote repo
 
 ### Blowing away changes that are committed
@@ -27,6 +27,10 @@
 
 ### Adding more changes to local checkin
 `git commit --amend`
+
+### Moving uncommited work from branch to branch
+`git checkout -b <new-branch>`  
+Then `add` and `commit` as usual
 
 ## Looking at repo state
 
