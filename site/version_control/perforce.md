@@ -16,6 +16,14 @@
 ##### See what is opened
 `p4 opened`
 
+### Shelves
+
+##### Shelving
+TBD
+
+#### Unshelving
+`p4 unshelve -s <Shelf Number> [-c <CLN>]`
+
 ### Crosporting change
 ```bash
 p4 integrate  //depot/<path>...@CLN,CLN  //depot/<path>...
