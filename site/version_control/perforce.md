@@ -1,11 +1,11 @@
 # Perforce
 
 ## Pulling code
-`p4 sync`
+`p4 sync [@CLN]`
 
 ## Checking in code
 
-## Moving all open files into a change
+### Moving all open files into a change
 Either make a new change  
 or  
 `p4 reopen -c <CLN> ...`
