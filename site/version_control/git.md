@@ -12,6 +12,10 @@
 ### Blowing away changes that are committed
 `git reset --hard origin/master`
 
+### Move all changes from one branch to another
+`git checkout foo
+git merge origin/master`
+
 ## Undo local change
 `git checkout <file path>`
 
