@@ -17,9 +17,12 @@
 git checkout foo
 git merge origin/master
 ```
+## You done goofed
+### Undo local change
+`git checkout -- <file path>`
 
-## Undo local change
-`git checkout <file path>`
+### Backout commit
+`git revert <Hash>`
 
 ## Pushing code
 
