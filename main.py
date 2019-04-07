@@ -36,6 +36,8 @@ def getFile(doc):
     pagePath = path.relpath(sourceFile, siteDir)
     page={}
     page["path"] = pagePath
+    page["offset"] = ".".join(pathBits)
+    print(page["offset"])
 
     if addIndex:
         sourceFile = path.join(sourceFile, "index")
