@@ -6,6 +6,8 @@ from collections import deque
 
 siteDir = path.abspath("site")
 
+pathCache = {}
+
 @route('/')
 def index():
     return getFile("/")
@@ -14,10 +16,15 @@ def index():
 @route('/<doc:path>')
 @view('page')
 def getFile(doc):
-    itemPath = path.normpath(path.join(siteDir, doc.strip("/\\")))
+    inputPath = path.normpath(path.join(siteDir, doc.strip("/\\")))
+
+    if inputPath in pathCache:
+        return pathCache[inputPath]
+
     pathBits = deque()
     sourceFile = None
     addIndex = False
+    itemPath = inputPath
 
     while sourceFile is None:
         if path.isfile(itemPath + ".md"):
@@ -45,6 +52,7 @@ def getFile(doc):
     with io.BytesIO() as output, open(sourceFile + ".md", "rb") as code:
         markdown.markdownFromFile(input=code, output=output)
         page["contents"] = output.getvalue()
+        pathCache[inputPath] = page
         return page
 
 
