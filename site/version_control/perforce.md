@@ -24,7 +24,10 @@ or
 ## Shelves
 
 #### Shelving
-TBD
+```cmd
+p4 shelve -c <CLN>
+p4 revert -c <CLN>
+```
 
 ### Unshelving
 `p4 unshelve -s <Shelf Number> [-c <CLN>]`
