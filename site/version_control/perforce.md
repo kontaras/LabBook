@@ -23,14 +23,23 @@ or
 
 ## Shelves
 
-#### Shelving
+### Shelving
 ```cmd
 p4 shelve -c <CLN>
 p4 revert -c <CLN>
 ```
 
+### List shelves
+`p4 changes -u <USERNAME> -s shelved`
+
+### See the contents of a shelf
+`p4 describe -S <CLN>`
+
 ### Unshelving
 `p4 unshelve -s <Shelf Number> [-c <CLN>]`
+
+### Deleting shelf
+`p4 shelve -d -c <CLN>`
 
 ## Undo the damage
 
