@@ -37,9 +37,17 @@ git merge origin/master
 ### Adding more changes to local checkin
 `git commit --amend`
 
-### Moving uncommited work from branch to branch
-`git checkout -b <new-branch>`  
-Then `add` and `commit` as usual
+### Creating a new branch
+`git checkout -b <new-branch>`
+
+### Deleting a branch
+`git branch -d <branch>`
+
+Force delete:  
+`git branch -D <branch>`
+
+Delete branch out of remote:  
+`git push --delete <remote_name> <branch_name>`
 
 ## Looking at repo state
 
