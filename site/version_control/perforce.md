@@ -35,6 +35,9 @@ p4 revert -c <CLN>
 ### See the contents of a shelf
 `p4 describe -S <CLN>`
 
+### Diff current workspace vs. shelf
+`p4 diff "@=<Shelf #>"`
+
 ### Unshelving
 `p4 unshelve -s <Shelf Number> [-c <CLN>]`
 
