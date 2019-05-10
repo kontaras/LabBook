@@ -2,6 +2,9 @@
 
 ## Pulling code
 
+### Clone repo
+`git clone <URL>`
+
 ### Checking out remote changes
 `git pull`: Same as doing `git fetch ; git merge`  
 `git pull --rebase`: Same as doing `git fetch ; git rebase`  
