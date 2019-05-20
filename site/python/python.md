@@ -8,3 +8,6 @@
 ## Configure test runner
 Go into Settings/Preferences > Tools > Python Integrated Tools  
 Change "Default test runner"
+
+# venv
+`python3 -m venv /path/to/new/virtual/environment`
