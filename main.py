@@ -45,6 +45,7 @@ def getFile(doc):
     page["path"] = pagePath
     page["offset"] = ".".join(pathBits)
     print(page["offset"])
+    page["breadcrumb"] = generate_breadcrumb(pagePath)
 
     if addIndex:
         sourceFile = path.join(sourceFile, "index")
@@ -54,6 +55,13 @@ def getFile(doc):
         page["contents"] = output.getvalue()
         pathCache[inputPath] = page
         return page
+
+
+def generate_breadcrumb(pagePath):
+    buffer = ""
+    for part in path.dirname("./" + pagePath).split("/"):
+        buffer += "<a href='/%s'>%s</a>/" % (part, part)
+    return buffer
 
 
 run(host='localhost', port=8080, reloader=True)
