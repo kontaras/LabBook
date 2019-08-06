@@ -3,6 +3,7 @@ from bottle import route, run, view, abort
 import io
 from os import path
 from collections import deque
+import os
 
 siteDir = path.abspath("site")
 
@@ -31,7 +32,7 @@ def getFile(doc):
             sourceFile = itemPath
             break
         if path.isdir(itemPath) and path.isfile(path.join(itemPath,"index.md")):
-            sourceFile = sourceFile = itemPath
+            sourceFile = itemPath
             addIndex = True
             break
         if not itemPath.startswith(siteDir):
@@ -45,7 +46,17 @@ def getFile(doc):
     page["path"] = pagePath
     page["offset"] = ".".join(pathBits)
     print(page["offset"])
-    page["breadcrumb"] = generate_breadcrumb(pagePath)
+    page["breadcrumb"] = "/".join(generate_breadcrumb(pagePath))
+
+    subpages = get_sub_pages(itemPath)
+    if len(subpages) > 0:
+        buffer = "<ul>\n"
+        for subpage in subpages:
+            buffer += "<li><a href='%s'>%s</a></li>\n" % (path.join(pagePath, subpage), subpage)
+        buffer += "</ul>\n"
+        page["subpages"] = buffer
+    else:
+        page["subpages"] = ""
 
     if addIndex:
         sourceFile = path.join(sourceFile, "index")
@@ -57,10 +68,23 @@ def getFile(doc):
         return page
 
 
+def get_sub_pages(item_path):
+    if not path.isdir(item_path):
+        return []
+    subs = []
+    for item in os.listdir(item_path):
+        #if item != "index.md":
+            if path.isdir(path.join(item_path, item)):
+                subs.append(item)
+            elif item.endswith(".md"):
+                subs.append(item.rstrip(".md"))
+    return subs
+
+
 def generate_breadcrumb(pagePath):
-    buffer = ""
+    buffer = []
     for part in path.dirname("./" + pagePath).split("/"):
-        buffer += "<a href='/%s'>%s</a>/" % (part, part)
+        buffer.append("<a href='/%s'>%s</a>" % (part, part))
     return buffer
 
 

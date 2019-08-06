@@ -15,6 +15,8 @@
     <body>
         {{!breadcrumb}}
 
+        {{!subpages}}
+
         {{!contents}}
     </body>
 </html>
