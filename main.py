@@ -52,7 +52,7 @@ def getFile(doc):
     if len(subpages) > 0:
         buffer = "<ul>\n"
         for subpage in subpages:
-            buffer += "<li><a href='%s'>%s</a></li>\n" % (path.join(pagePath, subpage), subpage)
+            buffer += "<li><a href='/%s'>%s</a></li>\n" % (path.join(pagePath, subpage), subpage)
         buffer += "</ul>\n"
         page["subpages"] = buffer
     else:
@@ -73,7 +73,7 @@ def get_sub_pages(item_path):
         return []
     subs = []
     for item in os.listdir(item_path):
-        #if item != "index.md":
+        if item != "index.md":
             if path.isdir(path.join(item_path, item)):
                 subs.append(item)
             elif item.endswith(".md"):
