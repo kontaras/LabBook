@@ -46,7 +46,7 @@ def getFile(doc):
     page["path"] = pagePath
     page["offset"] = ".".join(pathBits)
     print(page["offset"])
-    page["breadcrumb"] = "/".join(generate_breadcrumb(pagePath))
+    page["breadcrumb"] = "/".join(map(lambda x: "<a href='%s'>%s</a>" % (x[1], x[0]), generate_breadcrumb(pagePath)))
 
     subpages = get_sub_pages(itemPath)
     if len(subpages) > 0:
@@ -83,8 +83,12 @@ def get_sub_pages(item_path):
 
 def generate_breadcrumb(pagePath):
     buffer = []
-    for part in path.dirname("./" + pagePath).split("/"):
-        buffer.append("<a href='/%s'>%s</a>" % (part, part))
+    pathbuf = ""
+    for part in path.dirname(pagePath).split("/"):
+        if len(part) > 0:
+            pathbuf += "/" + part
+            buffer.append((part, pathbuf))
+    buffer = [("Home", "/")] + buffer
     return buffer
 
 
