@@ -24,10 +24,8 @@ or
 ## Shelves
 
 ### Shelving
-```cmd
-p4 shelve -c <CLN>
-p4 revert -c <CLN>
-```
+    p4 shelve -c <CLN>
+    p4 revert -c <CLN>
 
 ### List shelves
 `p4 changes -u <USERNAME> -s shelved`
@@ -53,8 +51,6 @@ p4 revert -c <CLN>
 `p4 undo "@<CLN>"`
 
 ## Crosporting change
-```bash
-p4 integrate  //depot/<path>...@CLN,CLN  //depot/<path>...
-p4 integrate  //depot/<path>...@=CLN  //depot/<path>...
-p4 resolve
-```
+    p4 integrate  //depot/<path>...@CLN,CLN  //depot/<path>...
+    p4 integrate  //depot/<path>...@=CLN  //depot/<path>...
+    p4 resolve

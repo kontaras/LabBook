@@ -16,10 +16,8 @@
 `git reset --hard origin/master`
 
 ### Move all changes from one branch to another
-```git
-git checkout foo
-git merge origin/master
-```
+    git checkout foo
+    git merge origin/master
 ## You done goofed
 ### Undo local change
 `git checkout -- <file path>`
