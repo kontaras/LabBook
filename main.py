@@ -1,5 +1,5 @@
 import markdown
-from bottle import route, run, view, abort
+from bottle import route, run, view, abort, Bottle
 import io
 from os import path
 from collections import deque
@@ -9,12 +9,14 @@ siteDir = path.abspath("site")
 
 pathCache = {}
 
-@route('/')
+app = Bottle()
+
+@app.route('/')
 def index():
     return getFile("/")
 
 
-@route('/<doc:path>')
+@app.route('/<doc:path>')
 @view('page')
 def getFile(doc):
     inputPath = path.normpath(path.join(siteDir, doc.strip("/\\")))
@@ -91,5 +93,5 @@ def generate_breadcrumb(pagePath):
     buffer = [("Home", "/")] + buffer
     return buffer
 
-
-run(host='localhost', port=8080, reloader=True)
+if __name__ == "__main__":
+    app.run(host='localhost', port=8080, reloader=True)
