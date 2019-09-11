@@ -97,4 +97,4 @@ def get_markdown_content(pagePath):
 
 
 if __name__ == "__main__":
-    app.run(host='localhost', port=8080, reloader=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
