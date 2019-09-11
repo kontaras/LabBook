@@ -1,1 +1,0 @@
-An empty directory can contain sub-pages and a blank navigation page will be generated.
