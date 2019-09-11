@@ -25,17 +25,18 @@ def getFile(doc):
         return pathCache[inputPath]
 
     pathBits = deque()
-    sourceFile = None
-    addIndex = False
+    content = None
     itemPath = inputPath
 
-    while sourceFile is None:
+    while content is None:
         if path.isfile(itemPath + ".md"):
-            sourceFile = itemPath
+            content = get_markdown_content(itemPath + ".md")
             break
-        if path.isdir(itemPath) and path.isfile(path.join(itemPath,"index.md")):
-            sourceFile = itemPath
-            addIndex = True
+        if path.isdir(itemPath):
+            if path.isfile(path.join(itemPath,"index.md")):
+                content = get_markdown_content(path.join(itemPath,"index.md"))
+            else:
+                content = ""
             break
         if not itemPath.startswith(siteDir):
             abort(404, "Invalid article")
@@ -43,7 +44,7 @@ def getFile(doc):
         pathBits.appendleft(pathBit)
         print(itemPath, pathBits)
 
-    pagePath = path.relpath(sourceFile, siteDir)
+    pagePath = path.relpath(itemPath, siteDir)
     page={}
     page["path"] = pagePath
     page["offset"] = ".".join(pathBits)
@@ -60,14 +61,9 @@ def getFile(doc):
     else:
         page["subpages"] = ""
 
-    if addIndex:
-        sourceFile = path.join(sourceFile, "index")
-    
-    with io.BytesIO() as output, open(sourceFile + ".md", "rb") as code:
-        markdown.markdownFromFile(input=code, output=output)
-        page["contents"] = output.getvalue()
-        pathCache[inputPath] = page
-        return page
+    page["contents"] = content
+    pathCache[inputPath] = page
+    return page
 
 
 def get_sub_pages(item_path):
@@ -92,6 +88,13 @@ def generate_breadcrumb(pagePath):
             buffer.append((part, pathbuf))
     buffer = [("Home", "/")] + buffer
     return buffer
+
+
+def get_markdown_content(pagePath):
+    with io.BytesIO() as output, open(pagePath, "rb") as code:
+        markdown.markdownFromFile(input=code, output=output)
+        return output.getvalue()
+
 
 if __name__ == "__main__":
     app.run(host='localhost', port=8080, reloader=True)
