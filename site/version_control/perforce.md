@@ -1,7 +1,7 @@
 # Perforce
 
 ## Pulling code
-`p4 sync [@CLN]`
+`p4 sync "[file][@1,CLN]"`
 
 ## Checking in code
 
