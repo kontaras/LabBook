@@ -1,0 +1,15 @@
+trigger:
+  branches:
+    include:
+    - '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
+
+- script: knaryshkin$ python -m unittest unit_tests/*
+  displayName: 'Running unit tests'
