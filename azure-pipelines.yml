@@ -18,5 +18,5 @@ steps:
     pip install -r requirements.txt
   displayName: 'Install dependencies'
 
-- script: python -m unittest unit_tests/*
+- script: python -m unittest unit_tests/*.py
   displayName: 'Running unit tests'
