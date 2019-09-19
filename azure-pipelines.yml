@@ -17,6 +17,7 @@ steps:
 - script: |
     pip install --upgrade pip
     pip install -r requirements.txt
+    ls
   displayName: 'Install dependencies'
 
 - script: python -m unittest unit_tests/test_generate_breadcrumb.py
