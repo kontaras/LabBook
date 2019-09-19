@@ -16,9 +16,7 @@ steps:
 - script: |
     pip install --upgrade pip
     pip install -r requirements.txt
-    git pull origin master
-    ls
   displayName: 'Install dependencies'
 
-- script: python -m unittest unit_tests/test_generate_breadcrumb.py
+- script: python -m unittest unit_tests/*.py
   displayName: 'Running unit tests'
