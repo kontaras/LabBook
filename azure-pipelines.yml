@@ -16,6 +16,7 @@ steps:
 - script: |
     pip install --upgrade pip
     pip install -r requirements.txt
+    git merge origin/master
     ls
   displayName: 'Install dependencies'
 
