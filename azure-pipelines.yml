@@ -8,8 +8,9 @@ pool:
 
 steps:
 - script: |
+    pip install --upgrade pip
     pip install -r requirements.txt
   displayName: 'Install dependencies'
 
-- script: knaryshkin$ python -m unittest unit_tests/*
+- script: python -m unittest unit_tests/*
   displayName: 'Running unit tests'
