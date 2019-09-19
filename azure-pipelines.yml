@@ -1,0 +1,22 @@
+trigger:
+  branches:
+    include:
+    - '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.7.x'
+    addToPath: true
+    architecture: 'x64'
+
+- script: |
+    pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
+
+- script: python -m unittest unit_tests/*.py
+  displayName: 'Running unit tests'
