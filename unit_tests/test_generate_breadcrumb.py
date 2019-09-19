@@ -1,5 +1,5 @@
 import unittest
-from main import generate_breadcrumb
+from app import generate_breadcrumb
 
 
 class MyTestCase(unittest.TestCase):
