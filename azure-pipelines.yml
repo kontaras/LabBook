@@ -19,5 +19,5 @@ steps:
     pip install pytest
   displayName: 'Install dependencies'
 
-- script: pytest unittest unit_tests
+- script: pytest unit_tests/*.py
   displayName: 'Running unit tests'
