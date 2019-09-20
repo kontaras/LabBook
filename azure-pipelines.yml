@@ -19,5 +19,5 @@ steps:
     pip install nose
   displayName: 'Install dependencies'
 
-- script: nosetest unit_tests/*.py
+- script: nosetests unit_tests/*.py
   displayName: 'Running unit tests'
