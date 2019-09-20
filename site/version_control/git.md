@@ -2,18 +2,32 @@
 
 ## Pulling code
 
+### Clone repo
+`git clone <URL>`
+
 ### Checking out remote changes
 `git pull`: Same as doing `git fetch ; git merge`  
 `git pull --rebase`: Same as doing `git fetch ; git rebase`  
 `git fetch`: Pull code from a remote repo into the local one  
-`git merge`: Apply remote changes (already in your repo) into your checked out state
+`git merge`: Apply remote changes (already in your repo) into your checked out state  
 `git rebase`: Apply the changes in your checked out state to the state pulled from the remote repo
 
 ### Blowing away changes that are committed
 `git reset --hard origin/master`
 
-## Undo local change
-`git checkout <file path>`
+### Move all changes from one branch to another
+    git checkout foo
+    git merge origin/master
+## You done goofed
+### Undo local change
+`git checkout -- <file path>`
+
+### Backout commit
+`git revert <Hash>`
+
+### Combining two commits
+`git rebase -i HEAD~2` (where HEAD~2 is the range of commits that need to be edited)  
+Then mark the commit as `squash` or `fixup` (depending on whether you want to keep the commit message or not).
 
 ## Pushing code
 
@@ -27,6 +41,18 @@
 
 ### Adding more changes to local checkin
 `git commit --amend`
+
+### Creating a new branch
+`git checkout -b <new-branch>`
+
+### Deleting a branch
+`git branch -d <branch>`
+
+Force delete:  
+`git branch -D <branch>`
+
+Delete branch out of remote:  
+`git push --delete <remote_name> <branch_name>`
 
 ## Looking at repo state
 

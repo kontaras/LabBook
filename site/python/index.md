@@ -3,6 +3,8 @@
 `pip list --outdated`  
 `pip install <PKG> --upgrade`
 
+## Install file
+`pip install -r requirements.txt`
 
 # PyCharm
 ## Configure test runner

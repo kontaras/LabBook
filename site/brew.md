@@ -13,6 +13,7 @@
 `brew cask info <PKG>`
 
 ### Install Package
+`brew install <PKG>`  
 `brew cask install <PKG>`
 
 ## Updating
