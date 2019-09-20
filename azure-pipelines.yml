@@ -19,5 +19,12 @@ steps:
     pip install nose
   displayName: 'Install dependencies'
 
-- script: nosetests unit_tests/*.py
+- script: nosetests --with-xunit unit_tests/*.py
   displayName: 'Running unit tests'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'XUnit'
+    testResultsFiles: '**/TEST-*.xml'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
