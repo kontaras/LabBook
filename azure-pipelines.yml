@@ -16,8 +16,8 @@ steps:
 - script: |
     pip install --upgrade pip
     pip install -r requirements.txt
-    pip install pytest
+    pip install nose
   displayName: 'Install dependencies'
 
-- script: pytest unit_tests/*.py
+- script: nosetest unit_tests/*.py
   displayName: 'Running unit tests'
