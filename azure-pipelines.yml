@@ -16,7 +16,8 @@ steps:
 - script: |
     pip install --upgrade pip
     pip install -r requirements.txt
+    pip install py.test
   displayName: 'Install dependencies'
 
-- script: python -m unittest unit_tests/*.py
+- script: py.test unittest unit_tests/*.py
   displayName: 'Running unit tests'
