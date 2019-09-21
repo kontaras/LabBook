@@ -7,8 +7,8 @@ environment:
 
 install:
   
-  - "%PYTHON%\\python.exe -m pip -r requirements.txt"
-  - "%PYTHON%\\python.exe -m pip -r requirements-dev.txt"
+  - "%PYTHON%\\pip.exe -r requirements.txt"
+  - "%PYTHON%\\pip.exe -r requirements-dev.txt"
 
 build: off
 
