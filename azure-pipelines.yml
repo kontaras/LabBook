@@ -21,6 +21,9 @@ steps:
 
 - script: python -m pytest --junitxml results.xml unit_tests/*.py
   displayName: 'Running unit tests'
+  
+- script: flake8
+  displayName: 'Checking style'
 
 - task: PublishTestResults@2
   inputs:
@@ -28,4 +31,3 @@ steps:
     testResultsFiles: '**/results.xml'
     mergeTestResults: true
     failTaskOnFailedTests: true
-  
