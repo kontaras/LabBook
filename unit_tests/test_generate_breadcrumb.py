@@ -17,11 +17,12 @@ class MyTestCase(unittest.TestCase):
         target = [("Home", "/"),
                   ("parent", "/parent"),
                   ("subparent", "/parent/subparent")]
-        self.assertListEqual(generate_breadcrumb("/parent/subparent/something"),
-                             target)
+        page_path = "/parent/subparent/something"
+        self.assertListEqual(generate_breadcrumb(page_path), target)
 
     def test_root(self):
         self.assertListEqual(generate_breadcrumb(""), [("Home", "/")])
+
 
 if __name__ == '__main__':
     unittest.main()
