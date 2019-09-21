@@ -19,7 +19,7 @@ steps:
     pip install pytest
   displayName: 'Install dependencies'
 
-- script: pytest unit_tests/*.py
+- script: python -m pytest unit_tests/*.py
   displayName: 'Running unit tests'
 
 - task: PublishTestResults@2
