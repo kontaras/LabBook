@@ -1,0 +1,18 @@
+environment:
+
+  matrix:
+
+    - PYTHON: "C:\\Python37"
+    - PYTHON: "C:\\Python37-x64"
+
+install:
+  
+  - "%PYTHON%\\python.exe -m pip -r requirements.txt"
+  - "%PYTHON%\\python.exe -m pip -r requirements-dev.txt"
+
+build: off
+
+test_script:
+
+  - "%PYTHON%\\python.exe -m pytest unit_tests/*.py"
+  - "%PYTHON%\\python.exe -m flake8"
