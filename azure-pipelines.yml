@@ -16,10 +16,10 @@ steps:
 - script: |
     pip install --upgrade pip
     pip install -r requirements.txt
-    pip install nose2
+    pip install pytest
   displayName: 'Install dependencies'
 
-- script: nose2 --plugin nose2.plugins.junitxml --junit-xml unit_tests/*.py
+- script: pytest unit_tests/*.py
   displayName: 'Running unit tests'
 
 - task: PublishTestResults@2
