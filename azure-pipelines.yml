@@ -16,6 +16,7 @@ steps:
 - script: |
     pip install --upgrade pip
     pip install -r requirements.txt
+    pip install -r requirements-dev.txt
   displayName: 'Install dependencies'
 
 - script: python -m pytest --junitxml results.xml unit_tests/*.py
