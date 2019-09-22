@@ -20,4 +20,4 @@ test_script:
 
 after_test:
 
-  - "%PYTHON%\\python.exe -m codecov"
+  - "%PYTHON%\\python.exe -m codecov -f results.xml"
