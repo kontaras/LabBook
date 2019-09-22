@@ -15,5 +15,9 @@ build: off
 
 test_script:
 
-  - "%PYTHON%\\python.exe -m pytest --cov-report=xml unit_tests"
+  - "%PYTHON%\\python.exe -m pytest --cov-report=xml --cov=app unit_tests"
   - "%PYTHON%\\python.exe -m flake8"
+
+after_test:
+
+  - "%PYTHON%\\python.exe -m codecov"
