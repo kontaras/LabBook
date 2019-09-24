@@ -66,3 +66,9 @@ Delete branch out of remote:
 ### What has not been pushed
 `git log origin/master..HEAD`: See what has been committed but not pushed  
 `git diff origin/master..HEAD`: Diff between what has been committed and what has been pushed
+
+## Save credentials (Windows)
+`git config --global credential.helper manager`
+### Edit saved credentials
+Search for `Credential Manager`
+
