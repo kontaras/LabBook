@@ -16,7 +16,18 @@ steps:
 - script: |
     pip install --upgrade pip
     pip install -r requirements.txt
+    pip install -r requirements-dev.txt
   displayName: 'Install dependencies'
 
-- script: python -m unittest unit_tests/*.py
+- script: python -m pytest --junitxml results.xml unit_tests/*.py
   displayName: 'Running unit tests'
+  
+- script: flake8
+  displayName: 'Checking style'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/results.xml'
+    mergeTestResults: true
+    failTaskOnFailedTests: true

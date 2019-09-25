@@ -1,5 +1,5 @@
 import markdown
-from bottle import route, run, view, abort, Bottle
+from bottle import view, abort, Bottle
 import io
 from os import path
 from collections import deque
@@ -10,6 +10,9 @@ siteDir = path.abspath("site")
 pathCache = {}
 
 app = Bottle()
+
+md = markdown.Markdown(extensions=['toc'])
+
 
 @app.route('/')
 def index():
@@ -31,12 +34,15 @@ def getFile(doc):
     while content is None:
         if path.isfile(itemPath + ".md"):
             content = get_markdown_content(itemPath + ".md")
+            toc = md.toc
             break
         if path.isdir(itemPath):
-            if path.isfile(path.join(itemPath,"index.md")):
-                content = get_markdown_content(path.join(itemPath,"index.md"))
+            if path.isfile(path.join(itemPath, "index.md")):
+                content = get_markdown_content(path.join(itemPath, "index.md"))
+                toc = md.toc
             else:
                 content = ""
+                toc = ""
             break
         if not itemPath.startswith(siteDir):
             abort(404, "Invalid article")
@@ -45,23 +51,27 @@ def getFile(doc):
         print(itemPath, pathBits)
 
     pagePath = path.relpath(itemPath, siteDir)
-    page={}
+    page = {}
     page["path"] = pagePath
     page["offset"] = ".".join(pathBits)
     print(page["offset"])
-    page["breadcrumb"] = "/".join(map(lambda x: "<a href='%s'>%s</a>" % (x[1], x[0]), generate_breadcrumb(pagePath)))
+    page["breadcrumb"] = "/".join(
+        map(lambda x: "<a href='%s'>%s</a>" % (x[1], x[0]),
+            generate_breadcrumb(pagePath)))
 
     subpages = get_sub_pages(itemPath)
     if len(subpages) > 0:
         buffer = "<ul>\n"
         for subpage in subpages:
-            buffer += "<li><a href='/%s'>%s</a></li>\n" % (path.join(pagePath, subpage), subpage)
+            buffer += "<li><a href='/%s'>%s</a></li>\n" % \
+                (path.join(pagePath, subpage), subpage)
         buffer += "</ul>\n"
         page["subpages"] = buffer
     else:
         page["subpages"] = ""
 
     page["contents"] = content
+    page["toc"] = toc
     pathCache[inputPath] = page
     return page
 
@@ -92,7 +102,7 @@ def generate_breadcrumb(pagePath):
 
 def get_markdown_content(pagePath):
     with io.BytesIO() as output, open(pagePath, "rb") as code:
-        markdown.markdownFromFile(input=code, output=output)
+        md.reset().convertFile(input=code, output=output)
         return output.getvalue()
 
 
