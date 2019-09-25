@@ -16,6 +16,8 @@
         {{!breadcrumb}}
 
         {{!subpages}}
+        
+        {{!toc}}
 
         {{!contents}}
     </body>
