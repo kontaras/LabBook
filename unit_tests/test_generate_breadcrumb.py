@@ -2,7 +2,7 @@ import unittest
 from app import generate_breadcrumb
 
 
-class MyTestCase(unittest.TestCase):
+class TestGenerateBreadcrumb(unittest.TestCase):
     def test_file_in_root(self):
         self.assertListEqual(generate_breadcrumb("/something"),
                              [("Home", "/")])
