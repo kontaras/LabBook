@@ -86,6 +86,7 @@ def get_sub_pages(item_path):
                 subs.append(item)
             elif item.endswith(".md"):
                 subs.append(item.rstrip(".md"))
+    subs.sort()
     return subs
 
 
