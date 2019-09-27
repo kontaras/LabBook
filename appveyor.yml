@@ -20,4 +20,4 @@ test_script:
 
 after_test:
 
-  - "%PYTHON%\\python.exe -m codecov -f coverage.xml"
+  - "%PYTHON%\\python.exe -m codecov -f coverage.xml -F unittests"
