@@ -14,3 +14,6 @@
 `-A` display all files other than `.` and `..`
 
 `-t` sort by modification timestamp
+
+# Line numbers in less
+`-N`
