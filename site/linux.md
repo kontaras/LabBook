@@ -17,3 +17,7 @@
 
 # Line numbers in less
 `-N`
+
+# ps
+## See how log a process has been running
+`ps -o etime= -p <PID>`
