@@ -21,3 +21,7 @@
 # ps
 ## See how log a process has been running
 `ps -o etime= -p <PID>`
+
+# systemctl
+## Get the status logs for a service
+`sudo systemctl status -l <SERVICE NAME>`
