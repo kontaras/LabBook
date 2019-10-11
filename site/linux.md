@@ -25,3 +25,6 @@
 # systemctl
 ## Get the status logs for a service
 `sudo systemctl status -l <SERVICE NAME>`
+
+### More logs
+`sudo journalctl -u <SERVICE NAME>.service`
