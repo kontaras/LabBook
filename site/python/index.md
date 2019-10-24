@@ -13,6 +13,10 @@ Change "Default test runner"
 
 # venv
 ## Create
+### Python 2
+    python.exe -m pip install virtualenv
+    python -m virtualenv <PATH TO VENV>
+### Python 3
 `python -m venv <PATH TO VENV>`
 
 ## Enter
