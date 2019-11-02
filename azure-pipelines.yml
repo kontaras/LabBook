@@ -19,7 +19,7 @@ steps:
     pip install -r requirements-dev.txt
   displayName: 'Install dependencies'
 
-- script: python -m pytest --junitxml results.xml unit_tests/*.py
+- script: python -m pytest --junitxml results.xml -s unit_tests/*.py
   displayName: 'Running unit tests'
   
 - script: flake8
