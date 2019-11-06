@@ -85,7 +85,8 @@ class TestGetSubPages(unittest.TestCase):
 
     def test_dir_with_dir_file_and_junk(self):
         """
-        Test a directory with a sub-directory, a file, an invalid file, and an index.
+        Test a directory with a sub-directory, a file, an invalid file, and an
+        index.
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
             os.mkdir(os.path.join(tmp_dir, "dir"))
