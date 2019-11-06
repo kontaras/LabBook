@@ -27,6 +27,9 @@
 `git rebase -i HEAD~2` (where HEAD~2 is the range of commits that need to be edited)  
 Then mark the commit as `squash` or `fixup` (depending on whether you want to keep the commit message or not).
 
+## Undo an `add`
+`git reset <file>`
+
 # Pushing code
 
 ## Adding files to change
