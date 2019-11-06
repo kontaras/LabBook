@@ -23,8 +23,8 @@ steps:
   displayName: 'Running unit tests'
   
 - script: |
-  flake8
-  pylint unit_tests app  --disable=no-member
+    flake8
+    pylint unit_tests app  --disable=no-member
   displayName: 'Checking style'
 
 - task: PublishTestResults@2
