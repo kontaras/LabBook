@@ -13,6 +13,8 @@ steps:
     addToPath: true
     architecture: 'x64'
 
+- script: set -e
+
 - script: |
     pip install --upgrade pip
     pip install -r requirements.txt
