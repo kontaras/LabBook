@@ -104,8 +104,10 @@ def get_sub_pages(item_path):
         if item != "index.md":
             if path.isdir(path.join(item_path, item)):
                 subs.append(item)
-            elif item.endswith(".md"):
-                subs.append(item.rstrip(".md"))
+            else:
+                root, ext = path.splitext(item)
+                if ext == ".md":
+                    subs.append(root)
     subs.sort()
     return subs
 
