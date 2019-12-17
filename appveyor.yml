@@ -13,12 +13,18 @@ install:
 
 build: off
 
-test_script:
-
-  - "%PYTHON%\\python.exe -m pytest --cov-report xml --cov-report term --cov=app -s unit_tests"
+check_syntax:
   - "%PYTHON%\\python.exe -m flake8"
   - "%PYTHON%\\python.exe -m pylint unit_tests app  --disable=no-member"
 
-after_test:
+test_unit:
 
+  - "%PYTHON%\\python.exe -m pytest --cov-report xml --cov-report term --cov=app -s unit_tests"
   - "%PYTHON%\\python.exe -m codecov -f coverage.xml -F unittests"
+
+test_regression:
+  -
+  - "%PYTHON%\\python.exe -m pytest --cov-report xml --cov-report term --cov=app -s regression_tests"
+  - "%PYTHON%\\python.exe -m codecov -f coverage.xml -F regresiontests"
+
+
