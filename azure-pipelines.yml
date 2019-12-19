@@ -24,7 +24,7 @@ steps:
   
 - script: |
     flake8
-    pylint unit_tests app  --disable=no-member
+    pylint unit_tests regression_tests app  --disable=no-member
   displayName: 'Checking style'
 
 - task: PublishTestResults@2
