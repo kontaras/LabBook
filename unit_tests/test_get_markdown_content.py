@@ -1,3 +1,5 @@
+"Tests for the get_markdown_content method"
+
 import unittest
 import tempfile
 import os
@@ -5,17 +7,22 @@ from app import get_markdown_content
 
 
 class TestGetMarkdownContents(unittest.TestCase):
+    "Tests for the get_markdown_content method"
     def test_markdown(self):
-        fd = tempfile.mkstemp()
+        """
+        Basic test.
+        Tests that if markdown is passed in, HTML comes out
+        """
+        file_disc = tempfile.mkstemp()
         try:
-            with open(fd[1], "w") as writable:
+            with open(file_disc[1], "w") as writable:
                 writable.write("Heading")
                 writable.flush()
-            content = get_markdown_content(fd[1])
+            content = get_markdown_content(file_disc[1])
             self.assertEqual(content, b"<p>Heading</p>")
         finally:
-            os.close(fd[0])
-            os.unlink(fd[1])
+            os.close(file_disc[0])
+            os.unlink(file_disc[1])
 
 
 if __name__ == '__main__':
