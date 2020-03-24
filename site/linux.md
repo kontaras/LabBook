@@ -15,7 +15,8 @@
 
 `-t` sort by modification timestamp
 
-# Line numbers in less
+# less
+## Line numbers
 `-N`
 
 # ps
@@ -26,5 +27,11 @@
 ## Get the status logs for a service
 `sudo systemctl status -l <SERVICE NAME>`
 
-### More logs
+## More logs
 `sudo journalctl -u <SERVICE NAME>.service`
+
+# chmod
+`u` user  
+`g` goup  
+`o` other  
+`a` all
