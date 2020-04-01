@@ -8,5 +8,11 @@
 ## Install package
 `choco install <NAME>`
 
+## Find outdated
+`choco.exe outdated`
+
+## Install update
+`choco upgrade <PACKAGES>`
+
 # Can't type in Windows 10 search bar 
 Win + R: `C:\Windows\system32\ctfmon.exe`
