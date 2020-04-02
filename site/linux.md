@@ -35,3 +35,8 @@
 `g` goup  
 `o` other  
 `a` all
+
+# vi
+## delete all lines
+`:1,$d` where `1` is the starting line number and `$` is the ending line number (EOF)  
+`:%d` because `%` is all the lines in the file
