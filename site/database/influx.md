@@ -1,0 +1,2 @@
+# Listing databases
+`SHOW MEASUREMENTS`
