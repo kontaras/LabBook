@@ -43,10 +43,10 @@
 
 # screen
 ## Connecting
-`screen` start a new screen
-`screen -r` reconnect to your screen
+`screen` start a new screen  
+`screen -r` reconnect to your screen  
 
 ## Scrollback mode
-`Ctrl+A, Esc` Enter scrollback
-`Up Down PageUp PageDown` Navigate
+`Ctrl+A, Esc` Enter scrollback  
+`Up Down PageUp PageDown` Navigate  
 `Esc` Exit
