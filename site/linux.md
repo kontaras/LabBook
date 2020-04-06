@@ -50,3 +50,7 @@
 `Ctrl+A, Esc` Enter scrollback  
 `Up Down PageUp PageDown` Navigate  
 `Esc` Exit
+
+# firewalld
+`sudo firewall-cmd --get-active-zones` Get configured zones  
+`sudo firewall-cmd --zone=<ZONE> --add-port=<PORT>/tcp` Add a port, `--permanent ` to make it permanent
