@@ -40,3 +40,13 @@
 ## delete all lines
 `:1,$d` where `1` is the starting line number and `$` is the ending line number (EOF)  
 `:%d` because `%` is all the lines in the file
+
+# screen
+## Connecting
+`screen` start a new screen
+`screen -r` reconnect to your screen
+
+## Scrollback mode
+`Ctrl+A, Esc` Enter scrollback
+`Up Down PageUp PageDown` Navigate
+`Esc` Exit
