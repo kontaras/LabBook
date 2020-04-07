@@ -41,6 +41,10 @@
 `:1,$d` where `1` is the starting line number and `$` is the ending line number (EOF)  
 `:%d` because `%` is all the lines in the file
 
+## go to line
+`1G` Go to line 1
+`$G` Go to last line
+
 # screen
 ## Connecting
 `screen` start a new screen  
