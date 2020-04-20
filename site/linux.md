@@ -39,16 +39,26 @@
 # vi
 ## delete all lines
 `:1,$d` where `1` is the starting line number and `$` is the ending line number (EOF)  
-`:%d` because `%` is all the lines in the file
+`:%d` because `%` is all the lines in the file  
+`Vggx` Delete from the current line to the start of file
+`VGx` Delete from current line to end of file
 
 ## go to line
-`1G` Go to line 1
+`1G` Go to line 1  
 `$G` Go to last line
+
+## copy-paste
+`yy` Yank current line  
+`p` put
+
+## find
+`/<word>`
 
 # screen
 ## Connecting
 `screen` start a new screen  
 `screen -r` reconnect to your screen  
+`screen -S <SESSION NAME>` start a new session
 
 ## Scrollback mode
 `Ctrl+A, Esc` Enter scrollback  
