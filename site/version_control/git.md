@@ -16,6 +16,7 @@
 ## Move all changes from one branch to another
     git checkout foo
     git merge origin/master
+
 # You done goofed
 ## Undo local change
 `git checkout -- <file path>`
@@ -67,6 +68,9 @@ Delete branch out of remote:
 ## What has not been pushed
 `git log origin/master..HEAD`: See what has been committed but not pushed  
 `git diff origin/master..HEAD`: Diff between what has been committed and what has been pushed
+
+## See the last few changes
+`git log -n <NUMBER>`
 
 # Save credentials (Windows)
 `git config --global credential.helper manager`
