@@ -21,7 +21,7 @@ jobs:
     - name: Lint
       run: |
         flake8
-        pylint unit_tests regression_tests app  --disable=no-member
+        pylint unit_tests regression_tests integ_tests app  --disable=no-member --disable=too-many-locals
     - name: Test with pytest
       run: |
-        python -m pytest --junitxml results.xml -s unit_tests/*.py regression_tests/*.py
+        python -m pytest --junitxml results.xml -s unit_tests/*.py regression_tests/*.py integ_tests/*.py
