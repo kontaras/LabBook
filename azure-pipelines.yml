@@ -19,12 +19,12 @@ steps:
     pip install -r requirements-dev.txt
   displayName: 'Install dependencies'
 
-- script: python -m pytest --junitxml results.xml -s unit_tests/*.py regression_tests/*.py
+- script: python -m pytest --junitxml results.xml -s unit_tests/*.py regression_tests/*.py integ_tests/*.py
   displayName: 'Running unit tests'
   
 - script: |
     flake8
-    pylint unit_tests regression_tests app  --disable=no-member
+    pylint unit_tests regression_tests integ_tests app  --disable=no-member --disable=too-many-locals
   displayName: 'Checking style'
 
 - task: PublishTestResults@2
