@@ -6,7 +6,7 @@ jobs:
   build:
 
     env:
-      BUILD_FLAG_PYTHON_HOME: python -m
+      BUILD_FLAG_PYTHON_HOME: python -m 
 
     runs-on: ubuntu-latest
 
