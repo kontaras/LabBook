@@ -25,6 +25,7 @@ def depends(*trgs):
 
 
 def call(command):
+    cmd = get_flag("PYTHON_HOME")
     subprocess.check_call(command)
 
 
@@ -42,8 +43,8 @@ def lint():
 
 def run_test(test_dir, tag):
     def run():
-        test_cmd = "pytest app.py --cov-report term "
-        if get_flag("COVERAGE") == "":
+        test_cmd = "pytest app.py "
+        if get_flag("COVERAGE") != "":
             call("codecov -f coverage.xml -F " + tag)
             test_cmd += " --cov-report xml --cov=app "
         call(test_cmd + " -s " + test_dir)
@@ -51,7 +52,7 @@ def run_test(test_dir, tag):
 
 
 def get_flag(flag):
-    os.environ.get("BUILD_FLAG_" + flag, "")
+    return os.environ.get("BUILD_FLAG_" + flag, "")
 
 
 targets = {

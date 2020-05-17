@@ -5,6 +5,9 @@ on: [push]
 jobs:
   build:
 
+    env:
+      BUILD_FLAG_PYTHON_HOME: python -m
+
     runs-on: ubuntu-latest
 
     steps:
