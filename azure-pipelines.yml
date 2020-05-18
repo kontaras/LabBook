@@ -6,6 +6,9 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  BUILD_FLAG_COVERAGE: True
+
 steps:
 - task: UsePythonVersion@0
   inputs:
