@@ -7,7 +7,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  BUILD_FLAG_COVERAGE: True
+  BUILD_FLAG_COVERAGE: junit
 
 steps:
 - task: UsePythonVersion@0
