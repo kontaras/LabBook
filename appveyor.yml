@@ -7,21 +7,12 @@ environment:
 
 install:
   
-  - "%PYTHON%\\python.exe -m pip install --upgrade pip"
-  - "%PYTHON%\\python.exe -m pip install -r requirements.txt"
-  - "%PYTHON%\\python.exe -m pip install -r requirements-dev.txt"
+  - "%PYTHON%\\python.exe build.py reqs"
 
 build: off
 
 test_script:
 
-  - "%PYTHON%\\python.exe -m flake8"
-  - "%PYTHON%\\python.exe -m pylint unit_tests regression_tests integ_tests app  --disable=no-member --disable=too-many-locals"
-  - "%PYTHON%\\python.exe -m pytest --cov-report xml --cov-report term --cov=app -s unit_tests"
-  - "%PYTHON%\\python.exe -m codecov -f coverage.xml -F unittests"
-  - "%PYTHON%\\python.exe -m pytest --cov-report xml --cov-report term --cov=app -s regression_tests"
-  - "%PYTHON%\\python.exe -m codecov -f coverage.xml -F regresiontests"
-  - "%PYTHON%\\python.exe -m pytest --cov-report xml --cov-report term --cov=app -s integ_tests"
-  - "%PYTHON%\\python.exe -m codecov -f coverage.xml -F integrationtests"
+  - "%PYTHON%\\python.exe build.py quality test"
 
 
