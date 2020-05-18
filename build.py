@@ -38,7 +38,8 @@ def flake():
 
 
 def lint():
-    call("pylint " + code_files + " --disable=no-member --disable=too-many-locals")
+    call("pylint " + code_files +
+         " --disable=no-member --disable=too-many-locals")
 
 
 def run_test(test_dir, tag):
@@ -56,17 +57,17 @@ def get_flag(flag):
 
 
 targets = {
-    "updatepip" : update_pip,
-    "reqs-dev" : install_requirements_dev,
-    "reqs-run" : install_requirements_runtime,
-    "reqs" : depends("updatepip", "reqs-dev", "reqs-run"),
-    "flake" : flake,
-    "lint" : lint,
-    "quality" : depends("flake", "lint"),
-    "test_unit" : run_test("unit_tests", "unittests"),
-    "test_reg" : run_test("regression_tests", "regresiontests"),
-    "test_integ" : run_test("integ_tests", "integrationtests"),
-    "test" : depends("test_unit", "test_reg", "test_integ")
+    "updatepip": update_pip,
+    "reqs-dev": install_requirements_dev,
+    "reqs-run": install_requirements_runtime,
+    "reqs": depends("updatepip", "reqs-dev", "reqs-run"),
+    "flake": flake,
+    "lint": lint,
+    "quality": depends("flake", "lint"),
+    "test_unit": run_test("unit_tests", "unittests"),
+    "test_reg": run_test("regression_tests", "regresiontests"),
+    "test_integ": run_test("integ_tests", "integrationtests"),
+    "test": depends("test_unit", "test_reg", "test_integ")
 }
 
 if __name__ == "__main__":
