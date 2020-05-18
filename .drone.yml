@@ -1,0 +1,8 @@
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: python
+  commands:
+  - python build.py reqs quality test
