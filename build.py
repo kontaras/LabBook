@@ -45,12 +45,15 @@ def lint():
 def run_test(test_dir, tag):
     def run():
         test_cmd = "pytest app.py "
+        posttest_cmd = []
         if get_flag("COVERAGE") == "codecov":
-            call("codecov -f coverage.xml -F " + tag)
+            posttest_cmd.append("codecov -f coverage.xml -F " + tag)
             test_cmd += " --cov-report xml --cov=app "
         elif get_flag("COVERAGE") == "junit":
             test_cmd += " --junitxml results.xml "
         call(test_cmd + " -s " + test_dir)
+        for command in posttest_cmd:
+            call(command)
     return run
 
 
