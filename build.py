@@ -26,7 +26,7 @@ def depends(*trgs):
 
 def call(command):
     cmd = get_flag("PYTHON_HOME") + command
-    subprocess.check_call(cmd)
+    subprocess.check_call(cmd, shell=True)
 
 
 def execute_target(target):
