@@ -72,10 +72,18 @@ Delete branch out of remote:
 ## See the last few changes
 `git log -n <NUMBER>`
 
-# Save credentials (Windows)
+# Save credentials
+
+## Windows
 `git config --global credential.helper manager`
+
 ### Edit saved credentials
 Search for `Credential Manager`
+
+## OSX
+Save: `git config --global credential.helper osxkeychain`
+
+Delete: `git credential-osxkeychain erase`
 
 # Stash
 `git stash [push]` Push is implicit default  
