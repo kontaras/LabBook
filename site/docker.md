@@ -9,6 +9,12 @@
 
 `docker logs -f <CONTAINER ID>` Get output of container
 
+# Run flags
+`-i` Interactive  
+`-t` TTY Session
+`-d` Detach (background)
+`-p <PORT>:<PORT>` Forward a port from the host to the container
+
 # Volumes
 `docker volume create <VOLUME NAME>` Create volume
 
