@@ -6,6 +6,9 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  BUILD_FLAG_COVERAGE: junit
+
 steps:
 - task: UsePythonVersion@0
   inputs:
@@ -14,17 +17,14 @@ steps:
     architecture: 'x64'
 
 - script: |
-    pip install --upgrade pip
-    pip install -r requirements.txt
-    pip install -r requirements-dev.txt
+    python build.py reqs
   displayName: 'Install dependencies'
 
-- script: python -m pytest --junitxml results.xml -s unit_tests/*.py regression_tests/*.py integ_tests/*.py
+- script: python build.py test
   displayName: 'Running unit tests'
   
 - script: |
-    flake8
-    pylint unit_tests regression_tests integ_tests app  --disable=no-member --disable=too-many-locals
+    python build.py quality
   displayName: 'Checking style'
 
 - task: PublishTestResults@2

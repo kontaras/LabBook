@@ -5,6 +5,9 @@ on: [push]
 jobs:
   build:
 
+    env:
+      BUILD_FLAG_PYTHON_HOME: "python -m "
+
     runs-on: ubuntu-latest
 
     steps:
@@ -15,13 +18,7 @@ jobs:
         python-version: 3.8
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r requirements-dev.txt
-    - name: Lint
+        python build.py reqs
+    - name: Test
       run: |
-        flake8
-        pylint unit_tests regression_tests integ_tests app  --disable=no-member --disable=too-many-locals
-    - name: Test with pytest
-      run: |
-        python -m pytest --junitxml results.xml -s unit_tests/*.py regression_tests/*.py integ_tests/*.py
+        python build.py quality test
