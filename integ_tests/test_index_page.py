@@ -18,7 +18,7 @@ class Test(unittest.TestCase):
     def test_dir(self):
         "Test directory index"
         parts = run_page({"index": "the root index",
-                          "dir\\index": "the dir index"}, "dir")
+                          "dir/index": "the dir index"}, "dir")
         self.assertEqual(parts["contents"], "<p>the dir index</p>")
 
 
