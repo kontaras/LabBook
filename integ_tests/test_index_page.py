@@ -1,11 +1,14 @@
 '''
-test that index pages are properly found
+tests that index pages are properly found
 '''
 import unittest
 from utils import run_page
 
 
 class Test(unittest.TestCase):
+    '''
+    tests that index pages are properly found
+    '''
 
     def test_root(self):
         "Test that the root path"
