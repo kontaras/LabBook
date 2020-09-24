@@ -74,7 +74,9 @@ def add_pages_to_site(site_dir, pages):
     :param pages: Pairs of path and contents to use to create pages.
     """
     for path, contents in pages.items():
-        with open(os.path.join(site_dir, path + ".md"), "w") as page:
+        file_path = os.path.join(site_dir, path + ".md")
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        with open(file_path, "w") as page:
             page.write(contents)
 
 
