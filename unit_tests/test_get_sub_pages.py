@@ -6,8 +6,7 @@ import os
 import app
 
 
-'''Generic name to use for a subpage name'''
-default_page = "pindex"
+DEFAULT_PAGE = "pindex"
 
 
 class TestGetSubPages(unittest.TestCase):
@@ -47,36 +46,36 @@ class TestGetSubPages(unittest.TestCase):
         Test a directory with a file.
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
-            open(os.path.join(tmp_dir, default_page + ".md"), "x").close()
-            self.assertListEqual(app.get_sub_pages(tmp_dir), [default_page])
+            open(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"), "x").close()
+            self.assertListEqual(app.get_sub_pages(tmp_dir), [DEFAULT_PAGE])
 
     def test_dir_with_files(self):
         """
         Test a directory with multiple files.
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
-            open(os.path.join(tmp_dir, default_page + ".md"), "x").close()
-            open(os.path.join(tmp_dir, default_page + "2.md"), "x").close()
+            open(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"), "x").close()
+            open(os.path.join(tmp_dir, DEFAULT_PAGE + "2.md"), "x").close()
             self.assertListEqual(app.get_sub_pages(tmp_dir),
-                                 [default_page, default_page + "2"])
+                                 [DEFAULT_PAGE, DEFAULT_PAGE + "2"])
 
     def test_dir_with_sub_dir(self):
         """
         Test a directory with a sub-directory.
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
-            os.mkdir(os.path.join(tmp_dir, default_page))
-            self.assertListEqual(app.get_sub_pages(tmp_dir), [default_page])
+            os.mkdir(os.path.join(tmp_dir, DEFAULT_PAGE))
+            self.assertListEqual(app.get_sub_pages(tmp_dir), [DEFAULT_PAGE])
 
     def test_dir_with_sub_dirs(self):
         """
         Test a directory with multiple sub-directories.
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
-            os.mkdir(os.path.join(tmp_dir, default_page))
-            os.mkdir(os.path.join(tmp_dir, default_page + "2"))
+            os.mkdir(os.path.join(tmp_dir, DEFAULT_PAGE))
+            os.mkdir(os.path.join(tmp_dir, DEFAULT_PAGE + "2"))
             self.assertListEqual(app.get_sub_pages(tmp_dir),
-                                 [default_page, default_page + "2"])
+                                 [DEFAULT_PAGE, DEFAULT_PAGE + "2"])
 
     def test_dir_with_dir_and_file(self):
         """
@@ -84,9 +83,9 @@ class TestGetSubPages(unittest.TestCase):
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
             os.mkdir(os.path.join(tmp_dir, "dir"))
-            open(os.path.join(tmp_dir, default_page + ".md"), "x").close()
+            open(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"), "x").close()
             self.assertListEqual(app.get_sub_pages(tmp_dir), ["dir",
-                                                              default_page])
+                                                              DEFAULT_PAGE])
 
     def test_dir_with_dir_file_and_junk(self):
         """
@@ -95,11 +94,11 @@ class TestGetSubPages(unittest.TestCase):
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
             os.mkdir(os.path.join(tmp_dir, "dir"))
-            open(os.path.join(tmp_dir, default_page + ".md"), "x").close()
+            open(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"), "x").close()
             open(os.path.join(tmp_dir, "valid.txt"), "x").close()
             open(os.path.join(tmp_dir, "index.md"), "x").close()
             self.assertListEqual(app.get_sub_pages(tmp_dir), ["dir",
-                                                              default_page])
+                                                              DEFAULT_PAGE])
 
 
 if __name__ == "__main__":
