@@ -68,3 +68,6 @@
 # firewalld
 `sudo firewall-cmd --get-active-zones` Get configured zones  
 `sudo firewall-cmd --zone=<ZONE> --add-port=<PORT>/tcp` Add a port, `--permanent ` to make it permanent
+
+# symlink
+`ln -s <TARGET> <LINK>`
