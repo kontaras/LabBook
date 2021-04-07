@@ -2,5 +2,5 @@ pytest==6.2.2
 flake8==3.8.4
 pytest-cov==2.11.1
 codecov==2.1.11
-httpx==0.17.0
+httpx==0.17.1
 pylint==2.7.2
