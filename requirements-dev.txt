@@ -3,4 +3,4 @@ flake8==3.9.0
 pytest-cov==2.11.1
 codecov==2.1.11
 httpx==0.17.1
-pylint==2.7.2
+pylint==2.7.4
