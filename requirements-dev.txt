@@ -1,5 +1,5 @@
 pytest==6.2.3
-flake8==3.9.0
+flake8==3.9.1
 pytest-cov==2.11.1
 codecov==2.1.11
 httpx==0.17.1
