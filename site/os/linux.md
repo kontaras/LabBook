@@ -40,7 +40,7 @@
 ## delete all lines
 `:1,$d` where `1` is the starting line number and `$` is the ending line number (EOF)  
 `:%d` because `%` is all the lines in the file  
-`Vggx` Delete from the current line to the start of file
+`Vggx` Delete from the current line to the start of file  
 `VGx` Delete from current line to end of file
 
 ## go to line
