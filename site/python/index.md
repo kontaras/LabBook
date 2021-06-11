@@ -6,6 +6,9 @@
 ## Install file
 `pip install -r requirements.txt`
 
+## Install into dir
+`pip install -t <DIR>`
+
 # PyCharm
 ## Configure test runner
 Go into Settings/Preferences > Tools > Python Integrated Tools  
