@@ -39,7 +39,7 @@ def flake():
 
 def lint():
     call("pylint " + code_files +
-         " --disable=no-member --disable=too-many-locals")
+         " --disable=no-member --disable=too-many-locals --ignore-imports=yes")
 
 
 def run_test(test_dir, tag):
