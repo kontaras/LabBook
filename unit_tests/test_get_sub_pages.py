@@ -3,6 +3,7 @@
 import unittest
 import tempfile
 import os
+from pathlib import Path
 import app
 
 
@@ -30,7 +31,7 @@ class TestGetSubPages(unittest.TestCase):
         Test a directory with an index.
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
-            open(os.path.join(tmp_dir, "index.md"), "x").close()
+            self.touch(os.path.join(tmp_dir, "index.md"))
             self.assertListEqual(app.get_sub_pages(tmp_dir), [])
 
     def test_dir_non_md(self):
@@ -38,7 +39,7 @@ class TestGetSubPages(unittest.TestCase):
         Test a directory with an invalid file.
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
-            open(os.path.join(tmp_dir, "valid.txt"), "x").close()
+            self.touch(os.path.join(tmp_dir, "valid.txt"))
             self.assertListEqual(app.get_sub_pages(tmp_dir), [])
 
     def test_dir_with_file(self):
@@ -46,7 +47,7 @@ class TestGetSubPages(unittest.TestCase):
         Test a directory with a file.
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
-            open(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"), "x").close()
+            self.touch(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"))
             self.assertListEqual(app.get_sub_pages(tmp_dir), [DEFAULT_PAGE])
 
     def test_dir_with_files(self):
@@ -54,8 +55,8 @@ class TestGetSubPages(unittest.TestCase):
         Test a directory with multiple files.
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
-            open(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"), "x").close()
-            open(os.path.join(tmp_dir, DEFAULT_PAGE + "2.md"), "x").close()
+            self.touch(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"))
+            self.touch(os.path.join(tmp_dir, DEFAULT_PAGE + "2.md"))
             self.assertListEqual(app.get_sub_pages(tmp_dir),
                                  [DEFAULT_PAGE, DEFAULT_PAGE + "2"])
 
@@ -83,7 +84,7 @@ class TestGetSubPages(unittest.TestCase):
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
             os.mkdir(os.path.join(tmp_dir, "dir"))
-            open(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"), "x").close()
+            self.touch(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"))
             self.assertListEqual(app.get_sub_pages(tmp_dir), ["dir",
                                                               DEFAULT_PAGE])
 
@@ -94,11 +95,21 @@ class TestGetSubPages(unittest.TestCase):
         """
         with tempfile.TemporaryDirectory() as tmp_dir:
             os.mkdir(os.path.join(tmp_dir, "dir"))
-            open(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"), "x").close()
-            open(os.path.join(tmp_dir, "valid.txt"), "x").close()
-            open(os.path.join(tmp_dir, "index.md"), "x").close()
+            self.touch(os.path.join(tmp_dir, DEFAULT_PAGE + ".md"))
+            self.touch(os.path.join(tmp_dir, "valid.txt"))
+            self.touch(os.path.join(tmp_dir, "index.md"))
             self.assertListEqual(app.get_sub_pages(tmp_dir), ["dir",
                                                               DEFAULT_PAGE])
+
+    @staticmethod
+    def touch(file_path):
+        """
+        Make sure that a file exists. If it already exists, it has its
+        modification time updated.
+        :param filePath: Path to the file to create
+        """
+        path = Path(file_path)
+        path.touch()
 
 
 if __name__ == "__main__":
