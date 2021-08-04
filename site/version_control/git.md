@@ -87,7 +87,8 @@ Delete: `git credential-osxkeychain erase`
 
 # Stash
 `git stash [push]` Push is implicit default  
-`git stash pop`
+`git stash pop`  
+`git stash show -p` show stash as a diff
 
 # Gerrit magical incantation  
 `git push origin HEAD:refs/for/master`
