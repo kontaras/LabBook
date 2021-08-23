@@ -66,7 +66,7 @@ def get_file(doc):
         print(item_path, path_bits)
 
     page_path = path.relpath(item_path, SITE_DIR)
-    page = dict()
+    page = {}
     page["path"] = page_path
     page["offset"] = ".".join(path_bits)
     print(page["offset"])

@@ -1,7 +1,7 @@
 """
 Utilities for common functionality for writing integration tests.
 """
-
+import locale
 import tempfile
 import uuid
 import os
@@ -37,7 +37,8 @@ def run_page(pages, path):
             subpages_delimiter = str(uuid.uuid4())
             contents_delimiter = str(uuid.uuid4())
             toc_delimiter = str(uuid.uuid4())
-            with open(os.path.join(views_dir, "page.tpl"), "w") as view:
+            with open(os.path.join(views_dir, "page.tpl"), "w",
+                      encoding=locale.getpreferredencoding()) as view:
                 write_section_to_view(view, "path", path_delimiter)
                 write_section_to_view(view, "offset", offset_delimiter)
                 write_section_to_view(view, "breadcrumb", breadcrumb_delimiter)
@@ -76,7 +77,8 @@ def add_pages_to_site(site_dir, pages):
     for path, contents in pages.items():
         file_path = os.path.join(site_dir, path + ".md")
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
-        with open(file_path, "w") as page:
+        with open(file_path, "w",
+                  encoding=locale.getpreferredencoding()) as page:
             page.write(contents)
 
 
