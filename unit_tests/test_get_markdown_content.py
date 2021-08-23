@@ -3,6 +3,7 @@
 import unittest
 import tempfile
 import os
+import locale
 from app import get_markdown_content
 
 
@@ -15,7 +16,8 @@ class TestGetMarkdownContents(unittest.TestCase):
         """
         file_disc = tempfile.mkstemp()
         try:
-            with open(file_disc[1], "w") as writable:
+            with open(file_disc[1], "w",
+                      encoding=locale.getpreferredencoding()) as writable:
                 writable.write("Heading")
                 writable.flush()
             content = get_markdown_content(file_disc[1])
