@@ -7,3 +7,8 @@
 
 ## Port forward
 `kubectl port-forward <POD> <PORT> -n <NAMESPACE>`
+
+
+# Resource creation
+## Get YAML for resource
+`kubectl get <TYPE> <NAME> -n <NAMESPACE> -o yaml`
