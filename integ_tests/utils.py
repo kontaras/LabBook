@@ -89,7 +89,7 @@ def write_section_to_view(view, template_var, delimiter):
     :param template_var: The variable to write.
     :param delimiter: Delimiter to mark the end of the variable section.
     """
-    view.write("{{!%s}}\n" % template_var)
+    view.write(f"{{{{!{template_var}}}}}\n")
     view.write(delimiter + "\n")
 
 

@@ -71,15 +71,15 @@ def get_file(doc):
     page["offset"] = ".".join(path_bits)
     print(page["offset"])
     page["breadcrumb"] = "/".join(
-        map(lambda x: "<a href='%s'>%s</a>" % (x[1], x[0]),
+        map(lambda x: f"<a href='{x[1]}'>{x[0]}</a>",
             generate_breadcrumb(page_path)))
 
     subpages = get_sub_pages(item_path)
     if len(subpages) > 0:
         buffer = "<ul>\n"
         for subpage in subpages:
-            buffer += "<li><a href='/%s'>%s</a></li>\n" % \
-                (path.join(page_path, subpage), subpage)
+            buffer += f"<li><a href='/{path.join(page_path, subpage)}'>" \
+                      f"{subpage}</a></li>\n"
         buffer += "</ul>\n"
         page["subpages"] = buffer
     else:
