@@ -28,3 +28,8 @@
 ### update all out of date packages
 `brew upgrade`  
 `brew cask upgrade`
+
+# Debug
+## Find service holding a port
+`netstat -vanp tcp | grep <PORT>`  
+`lsof -i tcp:<PORT>`
