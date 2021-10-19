@@ -39,4 +39,4 @@
 `/usr/libexec/java_home -V`
 
 ## Setting JAVA_HOME
-`/usr/libexec/java_home -v<VERSION>`
+``export JAVA_HOME=`/usr/libexec/java_home -v11<VERSION>` ``
