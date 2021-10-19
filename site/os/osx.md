@@ -33,3 +33,10 @@
 ## Find service holding a port
 `netstat -vanp tcp | grep <PORT>`  
 `lsof -i tcp:<PORT>`
+
+# java_home
+## Get installed versions
+`/usr/libexec/java_home -V`
+
+## Setting JAVA_HOME
+`/usr/libexec/java_home -v<VERSION>`
