@@ -96,3 +96,7 @@ Delete: `git credential-osxkeychain erase`
 
 # Gerrit magical incantation  
 `git push origin HEAD:refs/for/master`
+
+# Tag a build
+`git tag -a <TAG> [-m <MESSAGE>]`  
+`git push --tags`
