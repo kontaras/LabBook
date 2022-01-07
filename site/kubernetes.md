@@ -12,3 +12,7 @@
 # Resource creation
 ## Get YAML for resource
 `kubectl get <TYPE> <NAME> -n <NAMESPACE> -o yaml`
+
+## Deploy a resource
+`kubectl create -f <FILE.YML>` Create if not present  
+`kubectl apply -f <FILE.YML>` Create if not present, overwrite if not (and it was created with `--apply`)
