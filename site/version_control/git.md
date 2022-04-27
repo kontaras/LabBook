@@ -35,6 +35,9 @@ Then mark the commit as `squash` or `fixup` (depending on whether you want to ke
 ## Undo an `add`
 `git reset <file>`
 
+## Fix author
+`git commit --amend --reset-author`
+
 # Pushing code
 
 ## Adding files to change
