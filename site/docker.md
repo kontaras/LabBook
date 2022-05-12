@@ -21,3 +21,6 @@
 `-v <VOLUME NAME>:<MOUNT POINT>` Flag for `docker run`
 
 `docker volume inspect <VOLUME NAME>` Get information about volume 
+
+# Garbage Collect
+`docker image prune -a`
