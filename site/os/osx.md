@@ -40,3 +40,9 @@
 
 ## Setting JAVA_HOME
 ``export JAVA_HOME=`/usr/libexec/java_home -v<VERSION>` ``
+
+# Terminal
+
+## Copy/paste
+`echo junk | pbcopy`  
+`pbpaste > someFile`
