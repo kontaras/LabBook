@@ -105,3 +105,6 @@ Delete: `git credential-osxkeychain erase`
 `git push --tags`
 
 # git worktree
+
+# Locally ignore file
+Add it to `.git/info/exclude`
