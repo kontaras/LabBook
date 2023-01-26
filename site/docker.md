@@ -11,8 +11,8 @@
 
 # Run flags
 `-i` Interactive  
-`-t` TTY Session
-`-d` Detach (background)
+`-t` TTY Session  
+`-d` Detach (background)  
 `-p <PORT>:<PORT>` Forward a port from the host to the container
 
 # Volumes
