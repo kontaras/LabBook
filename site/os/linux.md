@@ -57,7 +57,8 @@
 # screen
 ## Connecting
 `screen` start a new screen  
-`screen -r` reconnect to your screen  
+`screen -r [<SESSION NAME/PID>]` reconnect to your screen  
+`screen -S <SESSION NAME/PID> -X sessionname <SESSION NAME>` rename session  
 `screen -S <SESSION NAME>` start a new session
 
 ## Scrollback mode
