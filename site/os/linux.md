@@ -32,7 +32,7 @@
 
 # chmod
 `u` user  
-`g` goup  
+`g` group  
 `o` other  
 `a` all
 
@@ -49,6 +49,7 @@
 
 ## copy-paste
 `yy` Yank current line  
+`<N>yy` Yank the next `N` lines  
 `p` put
 
 ## find
