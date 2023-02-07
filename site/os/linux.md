@@ -54,6 +54,10 @@
 ## find
 `/<word>`
 
+## change file
+`:e <FILENAME>` Open a file  
+`:e#` Open previously opened file
+
 # screen
 ## Connecting
 `screen` start a new screen  
