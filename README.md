@@ -7,8 +7,7 @@ Build
 ![GitHub Build](https://github.com/knary/LabBook/workflows/Python%20application/badge.svg)
 
 Quality Checks
-[![Requirements Status](https://requires.io/github/knary/LabBook/requirements.svg?branch=master)](https://requires.io/github/knary/LabBook/requirements/?branch=master)
-[![codecov](https://codecov.io/gh/knary/LabBook/branch/master/graph/badge.svg)](https://codecov.io/gh/knary/LabBook)
+[![codecov](https://codecov.io/gh/kontaras/LabBook/branch/master/graph/badge.svg?token=CdCjc2r1ox)](https://codecov.io/gh/kontaras/LabBook)
 [![Snyk Known Vulnerabilities](https://snyk.io/test/github/knary/LabBook/badge.svg)](https://snyk.io/test/github/knary/LabBook)
 
 A blog/wiki framework
