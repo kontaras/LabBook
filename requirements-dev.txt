@@ -1,6 +1,7 @@
-pytest==7.2.0
-flake8==5.0.4
+pytest==7.2.2
+flake8==6.0.0
 pytest-cov==4.0.0
 codecov==2.1.12
-httpx==0.23.0
-pylint==2.15.5
+httpx==0.23.3
+pylint==2.16.3
+certifi>=2022.12.7 # not directly required, pinned by Snyk to avoid a vulnerability
