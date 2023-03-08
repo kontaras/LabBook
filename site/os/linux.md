@@ -15,6 +15,8 @@
 
 `-t` sort by modification timestamp
 
+`-1` one entry per line
+
 # less
 ## Line numbers
 `-N`
