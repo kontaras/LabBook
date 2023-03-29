@@ -30,13 +30,14 @@ Then mark the commit as `squash` or `fixup` (depending on whether you want to ke
 
 ## Rename branch
 `git branch -m <OLD NAME> <NEW NAME>`  
-`git branch -m <NEW NAME>` Rename current branch
+`git branch -m <NEW NAME> #Rename current branch`
 
 ## Undo an `add`
 `git reset <file>`
 
 ## Fix author
-`git commit --amend --reset-author`
+`git config user.email <EMAIL>`  
+`git commit --amend --no-edit --reset-author`
 
 # Pushing code
 
