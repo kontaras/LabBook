@@ -44,6 +44,12 @@ Then mark the commit as `squash` or `fixup` (depending on whether you want to ke
 ## Adding files to change
 `git add`, `git rm`, `git mv`
 
+### Interactively adding select changes from a file
+`git add -p <FILE NAME>` see unstaged changes  
+`?` see commands  
+`y` stage this chunk  
+`n` leave chunk unstaged
+
 ## Checking in
 `git commit` Commit local changes to local repo  
 `git commit -m <message>`: Provide the commit message inline  
@@ -76,6 +82,9 @@ Delete branch out of remote:
 ## What has not been pushed
 `git log origin/master..HEAD`: See what has been committed but not pushed  
 `git diff origin/master..HEAD`: Diff between what has been committed and what has been pushed
+
+## See staged changes
+`git diff --staged`
 
 ## See the last few changes
 `git log -n <NUMBER>`
