@@ -33,8 +33,12 @@ Some proprietary/environment specific settings are omitted.
     brew update
     
     echo "Brew outdated: ${bold}brew upgrade${normal}"
-    brew outdated --greedy
-    #brew outdated --cask --greedy # No longer needed
+    brew outdated --formula --greedy
+    
+    echo
+    
+    echo "Brew outdated: ${bold}brew upgrade --cask${normal}"
+    brew outdated --cask --greedy
     
     echo
     echo "-----------------------------------------------------------------------------------------"
