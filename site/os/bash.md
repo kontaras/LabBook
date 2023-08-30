@@ -3,8 +3,9 @@
 
 # `find`
 `find <PATH> <TESTS>` Where:  
-`PATH`: Path in which to look
-`TESTS`:
+`PATH`: Path in which to look  
+`TESTS`:  
+
 * `-name <EXP>`: file name matching expression
 * `-iname <EXP>`: file name matching expression, case insensitive
 * `-path <EXP>`: path name matching expression
