@@ -24,3 +24,9 @@
 
 # Garbage Collect
 `docker image prune -a`
+
+# Docker for Desktop
+
+## Manually change config
+
+Mac: `~/Library/Group\ Containers/group.com.docker/settings.json`
