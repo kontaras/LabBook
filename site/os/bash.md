@@ -15,3 +15,7 @@
 List: `jobs`  
 Connect: `fg %<NUM>`  
 Kill: `kill %<NUM>`
+
+## Get absolute path to a file
+`realpath <FILE NAME>`  
+`realpath -m <FILE NAME>` to allow for non-existent files  
