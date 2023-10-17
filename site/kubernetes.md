@@ -15,4 +15,7 @@
 
 ## Deploy a resource
 `kubectl create -f <FILE.YML>` Create if not present  
-`kubectl apply -f <FILE.YML>` Create if not present, overwrite if not (and it was created with `--apply`)
+`kubectl apply -f <FILE.YML>` Create if not present, overwrite if present (and it was created with `--apply`)
+
+## Annotate a resource
+`kubectl annotate <TYPE> <NAME> <ANNOTATION KEY>=<ANNOTATION VALUE>`
