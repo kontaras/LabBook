@@ -19,3 +19,7 @@ Kill: `kill %<NUM>`
 ## Get absolute path to a file
 `realpath <FILE NAME>`  
 `realpath -m <FILE NAME>` to allow for non-existent files  
+
+## Get total size of dir
+`du -sh <PATH>` Total size of PATH  
+`du -h -d 1 <PATH>` Also get the size by sub-dir (larger values of `-d` for sub-sub-dirs)
