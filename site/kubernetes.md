@@ -8,6 +8,9 @@
 ## Port forward
 `kubectl port-forward <POD> <PORT> -n <NAMESPACE>`
 
+## Delete resources by pattern
+`kubectl get <TYPE> -o custom-columns=:.metadata.name --no-headers | grep <PATTERN> | xargs echo kubectl delete <TYPE>`
+
 
 # Resource creation
 ## Get YAML for resource
