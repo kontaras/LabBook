@@ -64,6 +64,7 @@
 # screen
 ## Connecting
 `screen` start a new screen  
+`screen -ls` list sessions  
 `screen -r [<SESSION NAME/PID>]` reconnect to your screen  
 `screen -S <SESSION NAME/PID> -X sessionname <SESSION NAME>` rename session  
 `screen -S <SESSION NAME>` start a new session
