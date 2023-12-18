@@ -22,3 +22,7 @@
 
 ## Annotate a resource
 `kubectl annotate <TYPE> <NAME> <ANNOTATION KEY>=<ANNOTATION VALUE>`
+
+# Setup
+
+Set default namespace: `kubectl config set-context --current --namespace=<NAMESPACE>`
