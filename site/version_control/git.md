@@ -24,6 +24,9 @@
 ## Backout commit
 `git revert <Hash>`
 
+## Delete an (unpushed) commit
+`git reset --hard HEAD^`
+
 ## Combining two commits
 `git rebase -i HEAD~2` (where HEAD~2 is the range of commits that need to be edited)  
 Then mark the commit as `squash` or `fixup` (depending on whether you want to keep the commit message or not).
