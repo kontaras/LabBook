@@ -11,6 +11,9 @@
 ## Delete resources by pattern
 `kubectl get <TYPE> -o custom-columns=:.metadata.name --no-headers | grep <PATTERN> | xargs echo kubectl delete <TYPE>`
 
+## Clear finalizers
+`kubectl patch <TYPE> <NAME> -p '{"metadata":{"finalizers":null}}' --type=merge`
+
 
 # Resource creation
 ## Get YAML for resource
