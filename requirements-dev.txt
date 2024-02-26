@@ -4,4 +4,5 @@ pytest-cov==4.1.0
 codecov==2.1.13
 httpx==0.27.0
 pylint==3.1.0
-certifi>=2022.12.7 # not directly required, pinned by Snyk to avoid a vulnerability
+certifi>=2023.7.22 # not directly required, pinned by Snyk to avoid a vulnerability
+requests>=2.31.0 # not directly required, pinned by Snyk to avoid a vulnerability
