@@ -14,6 +14,9 @@
 ## Clear finalizers
 `kubectl patch <TYPE> <NAME> -p '{"metadata":{"finalizers":null}}' --type=merge`
 
+## Print secret
+`kubectl get secret <NAME> --template={{.data.<KEY>}} | base64 -D`
+
 
 # Resource creation
 ## Get YAML for resource
