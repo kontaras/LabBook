@@ -125,7 +125,7 @@ Add it to `.git/info/exclude`
 # clean
 ## Deleate all ignored files
 `git clean -dfX[n]`  
-`-d` Recurse into ignored dirs
-`-f` Force (required)
-`-X` Untracked only
-`-n` dry run
+`-d` Recurse into ignored dirs  
+`-f` Force (required)  
+`-X` Untracked only  
+`-n` dry run  
