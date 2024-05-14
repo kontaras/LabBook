@@ -1,6 +1,10 @@
 ## Redirect stdout and err to file
 `CMD &> FILE` where `CMD` is the command to run and `FILE` is the log for output
 
+
+## Redirect stderr into stdout
+`2>&1`
+
 ## `find`
 `find <PATH> <TESTS>` Where:  
 `PATH`: Path in which to look  
