@@ -92,6 +92,10 @@ Delete branch out of remote:
 ## See the last few changes
 `git log -n <NUMBER>`
 
+## See a commit
+Diff: `git show <SHA>`  
+List files: `git show --name-only <SHA>`
+
 # Save credentials
 
 ## Windows
