@@ -25,6 +25,9 @@
 # Garbage Collect
 `docker image prune -a`
 
+# List available images
+`docker image ls`
+
 # Docker for Desktop
 
 ## Manually change config
