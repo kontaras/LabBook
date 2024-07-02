@@ -16,6 +16,10 @@
 `brew install <PKG>`  
 `brew cask install <PKG>`
 
+## List installed
+`brew list`  
+`brew list --cask`
+
 ## Updating
 
 ### Brew self update:
@@ -46,3 +50,8 @@
 ## Copy/paste
 `echo junk | pbcopy`  
 `pbpaste > someFile`
+
+# MacPort
+
+## List installed
+`port installed`
