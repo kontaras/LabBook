@@ -80,3 +80,11 @@
 
 # symlink
 `ln -s <TARGET> <LINK>`
+
+# alternatives
+## List alternatives
+`sudo update-alternatives --list <PACKAGE>`
+
+## Interactively change alterantive
+`sudo update-alternatives --config <PACKAGE>`
+
