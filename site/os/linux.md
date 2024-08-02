@@ -88,3 +88,8 @@
 ## Interactively change alterantive
 `sudo update-alternatives --config <PACKAGE>`
 
+# tmux
+`tmux new -s <SESSION NAME>` Create a new session  
+`tmux ls` List running sessions  
+`tmux attach -t <SESSION NAME>` Reattach to a running session  
+`tmux rename-session -t <OLD SESSION NAME> <NEW SESSION NAME>`  Rename running session
