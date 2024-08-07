@@ -61,6 +61,15 @@
 `:e <FILENAME>` Open a file  
 `:e#` Open previously opened file
 
+## Undo
+`<ESC> u` undo  
+`<CTRL>r` redo
+
+## Paste mode
+Stop vim from inserting "helpful" indentations  
+`:set paste`  
+`:unset paste`  To clear it
+
 # screen
 ## Connecting
 `screen` start a new screen  
