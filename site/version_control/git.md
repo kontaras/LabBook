@@ -42,6 +42,15 @@ Then mark the commit as `squash` or `fixup` (depending on whether you want to ke
 `git config user.email <EMAIL>`  
 `git commit --amend --no-edit --reset-author`
 
+## Move commit branch to branch
+To a new branch:  
+**UNTESTED! VERIFY BEFORE USE**
+```
+git checkout -b <NEW BRANCH>
+git reset --hard HEAD~1 # Move back 1 commit
+git checkout -
+```
+
 # Pushing code
 
 ## Adding files to change
