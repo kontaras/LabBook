@@ -2,4 +2,4 @@
 `terraform apply -replace helm_release.<RESOURCE NAME>`
 
 # Delete a resource
-`terraform destroy -target="<RESOURCE>`
+`terraform destroy -target="<RESOURCE>"`

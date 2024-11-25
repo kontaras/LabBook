@@ -45,11 +45,17 @@ Then mark the commit as `squash` or `fixup` (depending on whether you want to ke
 ## Move commit branch to branch
 To a new branch:  
 **UNTESTED! VERIFY BEFORE USE**
-```
-git checkout -b <NEW BRANCH>
-git reset --hard HEAD~1 # Move back 1 commit
-git checkout -
-```
+
+    git checkout -b <NEW BRANCH>
+    git reset --hard HEAD~1 # Move back 1 commit
+    git checkout -
+
+## Clobber a branch
+    git checkout main
+    git pull
+    git checkout - # Switch back to branch
+    git reset --hard main
+    git push --force
 
 # Pushing code
 
@@ -122,6 +128,8 @@ Delete: `git credential-osxkeychain erase`
 `git stash [push]` Push is implicit default  
 `git stash pop`  
 `git stash show -p` show stash as a diff
+`git stash list` List stashed changes
+`git stash drop` Delete stashed change
 
 # Gerrit magical incantation  
 `git push origin HEAD:refs/for/master`
