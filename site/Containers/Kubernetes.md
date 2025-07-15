@@ -32,3 +32,7 @@
 # Setup
 
 Set default namespace: `kubectl config set-context --current --namespace=<NAMESPACE>`
+
+## Set kubeconfig
+
+`export KUBECONFIG=$HOME/.kube/<SOMETHING>`
