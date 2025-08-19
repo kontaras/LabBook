@@ -20,6 +20,10 @@
 `brew list`  
 `brew list --cask`
 
+### List explicitly installed
+`brew leaves`  
+Ignore any packages under `brew leaves --installed-as-dependency`
+
 ## Updating
 
 ### Brew self update:
@@ -55,3 +59,6 @@
 
 ## List installed
 `port installed`
+
+### List explicitly installed
+`port installed requested`

@@ -27,3 +27,6 @@ Kill: `kill %<NUM>`
 ## Get total size of dir
 `du -sh <PATH>` Total size of PATH  
 `du -h -d 1 <PATH>` Also get the size by sub-dir (larger values of `-d` for sub-sub-dirs)
+
+## patch
+`patch -i <FILE> -p <LEVELS>`
