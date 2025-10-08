@@ -21,8 +21,7 @@
 `brew list --cask`
 
 ### List explicitly installed
-`brew leaves`  
-Ignore any packages under `brew leaves --installed-as-dependency`
+`brew leaves | grep -x -v "$(brew leaves --installed-as-dependency)"`  
 
 ## Updating
 

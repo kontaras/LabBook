@@ -15,6 +15,8 @@
 
 `-t` sort by modification timestamp
 
+`-r` reverse sort
+
 `-1` one entry per line
 
 # less

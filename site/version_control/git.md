@@ -88,6 +88,11 @@ Force delete:
 Delete branch out of remote:  
 `git push --delete <remote_name> <branch_name>`
 
+## Squash all commits on branch
+`git reset --soft <PARENT BRANCH>`  
+Maybe? `git add <UNTRACKED FILES>`  
+`git commit`
+
 # Looking at repo state
 
 ## Find the files that are open and not commited
