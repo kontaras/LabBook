@@ -1,2 +1,2 @@
 bottle==0.13.4
-Markdown==3.9
+Markdown==3.10.2
