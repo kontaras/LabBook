@@ -21,8 +21,8 @@
 ## Undo local change
 `git checkout -- <file path>`
 
-## Backout commit
-`git revert <Hash>`
+## Undo commit
+`git revert <HASH>[..<HASH>]`
 
 ## Delete an (unpushed) commit
 `git reset --hard HEAD^`
@@ -44,9 +44,9 @@ Then mark the commit as `squash` or `fixup` (depending on whether you want to ke
 
 ## Move commit branch to branch
 To a new branch:  
-**UNTESTED! VERIFY BEFORE USE**
 
     git checkout -b <NEW BRANCH>
+    git checkout -
     git reset --hard HEAD~1 # Move back 1 commit
     git checkout -
 

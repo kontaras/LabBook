@@ -17,6 +17,9 @@
 ## Print secret
 `kubectl get secret <NAME> --template={{.data.<KEY>}} | base64 -D`
 
+## Force delete
+`kubectl delete <TYPE> <NAME> --grace-period=0 --force`
+
 
 # Resource creation
 ## Get YAML for resource
@@ -36,3 +39,8 @@ Set default namespace: `kubectl config set-context --current --namespace=<NAMESP
 ## Set kubeconfig
 
 `export KUBECONFIG=$HOME/.kube/<SOMETHING>`
+
+# Querying
+
+## Get single label for all pods
+`kubectl get pods -o jsonpath='{.items[*].metadata.labels.<LABEL>}' | tr ' ' '\n' | uniq`

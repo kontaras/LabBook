@@ -30,3 +30,6 @@ Kill: `kill %<NUM>`
 
 ## patch
 `patch -i <FILE> -p <LEVELS>`
+
+## Create a large file
+`fallocate -l 10G <PATH>`
